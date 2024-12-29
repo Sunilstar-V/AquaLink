@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="about.css">
+    <style>
+        /* General reset and body styling */
+        html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    animation: changeBackground 8s infinite;
+
+}
+
+/* Main content area styling */
+.content {
+    flex: 1; /* This allows the content to take up the available space */
+    text-align: center;
+}
+
+/* Contact box styling */
+.contact-box {
+    width: 100%;
+    height: 220px;
+    background-color: #1f4cc9;
+    color: white;
+    text-align: center;
+}
+
+/* Footer styling */
+.footer {
+    width: 100%;
+    height: 150px;
+background-color: #0404aa;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+@keyframes changeBackground {
+  0% {
+    background-image: url('bg1.webp');
+  }
+  33% {
+    background-image: url('bg2.jpg');
+  }
+  66% {
+    background-image: url('bg3.jpg');
+  }
+  100% {
+    background-image: url('bg1.webp');
+  }
+}
+
+
+
+        /* Header and description styling */
+        h2 {
+            font-size: 40px;
+        }
+
+        .description {
+            text-align: center;
+        }
+
+        .img1, .img2, .img5, .img6, .img3, .img4 {
+            width: 180px;
+            height: 140px;
+            margin: 0;
+        }
+
+        /* Contact box and footer styling */
+
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+    text-align: center;
+        }
+
+        pre {
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Main Content -->
+        <div class="topnav" id="myTopnav">
+            <a href="home.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="shoping.html"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Shop Products</a>
+            <a href="brands.html"><i class="fa fa-tint" aria-hidden="true"></i> Brands</a>
+            <a href="about.html"><i class="fa fa-phone" aria-hidden="true"></i> Contact us</a>
+            <a href="login.html" class="split"><i class="fa fa-fw fa-user"></i> Login</a>
+            <a href="#about" class="split"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <a href="cart.html" class="split"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        
+        <h3> HydraDrop</h3>
+        <h2><b>Brands we deliver</b></h2>
+        <div class="description">
+            <img src="product1.jpg" alt="Fast Delivery" class="img1">
+            <img src="product2.jpg" alt="Fast Delivery" class="img2">
+            <img src="product3.png" alt="Fast Delivery" class="img3">
+            <img src="product4.jpeg" alt="Fast Delivery" class="img4">
+            <img src="product5.jpg" alt="Fast Delivery" class="img5">
+            <img src="product6.jpg" alt="Fast Delivery" class="img6">
+        </div>
+       
+        
+        <div class="brand-info" style="background-color: white; padding: 30px; margin: 30px auto; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: left;">
+            <h1 style="color: black; font-weight: bold; font-size: 32px; margin: 0; line-height: 1.2;">Kinley</h1>
+            <p style="color: black; font-size: 20px; margin: 5px 0 20px; line-height: 1.6;">
+                Kinley ensures the highest standards of purity with its reverse osmosis and UV treated water. 
+                Known for its balanced minerals and unmatched taste, Kinley has been trusted by families for years.
+            </p>
+        
+            <h1 style="color: black; font-weight: bold; font-size: 32px; margin: 0; line-height: 1.2;">Bisleri</h1>
+            <p style="color: black; font-size: 20px; margin: 5px 0 20px; line-height: 1.6;">
+                A household name in India, Bisleri offers mineral water enriched with essential nutrients. 
+                Its rigorous 10-step purification process guarantees safe and healthy hydration.
+            </p>
+        
+            <h1 style="color: black; font-weight: bold; font-size: 32px; margin: 0; line-height: 1.2;">Kingfisher</h1>
+            <p style="color: black; font-size: 20px; margin: 5px 0 20px; line-height: 1.6;">
+                Kingfisher packaged water delivers a premium experience with its crisp, refreshing taste.
+                Perfect for everyday consumption or special occasions, it reflects a commitment to quality.
+            </p>
+        
+            <h1 style="color: black; font-weight: bold; font-size: 32px; margin: 0; line-height: 1.2;">Hrich</h1>
+            <p style="color: black; font-size: 20px; margin: 5px 0 20px; line-height: 1.6;">
+                Hrich is designed to boost your health with water that’s infused with vital minerals. 
+                Its unique blend supports hydration and enhances overall well-being, making it a go-to choice.
+            </p>
+        
+            <h1 style="color: black; font-weight: bold; font-size: 32px; margin: 0; line-height: 1.2;">Aquafina</h1>
+            <p style="color: black; font-size: 20px; margin: 5px 0 20px; line-height: 1.6;">
+                Aquafina is synonymous with purity, offering water that undergoes a rigorous purification process. 
+                Its clean, crisp taste and consistency make it a global favorite for staying refreshed.
+            </p>
+        
+            <h1 style="color: black; font-weight: bold; font-size: 32px; margin: 0; line-height: 1.2;">RO Water</h1>
+            <p style="color: black; font-size: 20px; margin: 5px 0 20px; line-height: 1.6;">
+                RO water is the epitome of purity, providing clean drinking water by removing all impurities and contaminants. 
+                Its advanced filtration process ensures the healthiest hydration for your family.
+            </p>
+        </div>
+        
+        
+        
+        
+        
+    </div>
+
+    <!-- Contact box at the end of the content -->
+    <div class="contact-box">
+        <br>
+        <div class="contact-info">
+            <div>
+                <p><pre><b>Address</b><br><br>
+                     Water Solutions,
+                    VJIT, Aziz Nagar, 
+                    Hyderabad 500086</pre></p>
+            </div>
+            <div class="social-icons">
+                <p><b>Follow Us</b></p><br><br>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <i class="fab fa-instagram" style="color: white;"></i>
+              </a>
+              <a href="https://www.twitter.com/" target="_blank">
+                  <i class="fab fa-twitter" style="color: white;"></i>
+              </a>
+              
+            </div>
+            <div>
+                <p><pre><b>Contact</b><br><br>
+                    Mobile: +91 81432 58356
+                    Contact: aqualink@aq.com</pre></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><br>
+        <pre>&copy;copyright 2023 by Aqualink - Product Of  Water Solutions
+         Privacy Policy | Terms and Conditions
+        Powered By SSRH</pre>
+    </div>
+</body>
+</html>

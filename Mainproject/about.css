@@ -1,0 +1,39 @@
+
+h3 {
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Lucida Sans';
+    font-size:x-large;
+}
+.contact-box {
+    width: 100%;
+    height: 220px;
+    background-color: #1f4cc9;
+    margin-top: 20px;
+    color:white;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons i {
+    font-size: 30px;
+    margin: 0 10px;
+    color: orange;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: #0404aa;
+    color:white;
+}

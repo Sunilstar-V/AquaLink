@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="about.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        .footer {
+            font-size: larger;
+            text-align: center;
+            width: 100%;
+            height: 150px;
+            background-color: #0404aa;
+        }
+        body {
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  animation: changeBackground 8s infinite;
+ /* Reduces brightness to make text more readable */
+}
+
+@keyframes changeBackground {
+  0% {
+    background-image: url('bg1.webp');
+  }
+  33% {
+    background-image: url('bg2.jpg');
+  }
+  66% {
+    background-image: url('bg3.jpg');
+  }
+  100% {
+    background-image: url('bg1.webp');
+  }
+}
+
+/* Optional: Add a white overlay for more contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4); /* Adjust opacity for desired effect */
+  z-index: -1;
+}
+        pre{
+          font-size: 18px;
+          font-family:Arialsans-serif ;
+          text-align: center;
+          justify-content: space-around;
+        }
+        .responsive-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        #cart{
+            position:absolute;
+            top: 51px;
+            left: -15px;
+            margin-top: 40px;
+            width: 0px;
+            height: 0px;
+            margin-left: 250px;
+
+        }
+        
+        .description {
+            display: inline-block;
+            margin-left: 150px;
+        }
+
+        .description img,
+        .description span {
+            vertical-align: middle;
+        }
+
+        .img1 {
+            width: 45px;
+            height: 45px;
+        }
+
+        .img2 {
+            width: 35px;
+            height: 35px;
+        }
+
+        .img3 {
+            width: 35px;
+            height: 35px;
+        }
+
+        .description span {
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+        .about {
+            color: black;
+            font-size: large;
+           margin-left: 500px;
+        }
+        h2{
+            padding-left: 100px; ;
+        }
+        #addr-container{
+            position: relative;
+            top: 60px;
+            left: 200px;
+        }
+        #b{
+            position: relative;
+            top: 80px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="shoping.html"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Shop Products</a>
+        <a href="brands.html"><i class="fa fa-tint" aria-hidden="true"></i>
+          Brands</a>
+          <a href="about.html"><i class="fa fa-phone" aria-hidden="true"></i>
+            Contact us</a>
+        <a href="login.html" class="split"><i class="fa fa-fw fa-user"></i> Login</a>
+        <a href="#about" class="split"><i class="fa fa-search" aria-hidden="true"></i>
+        </a>
+        <a href="cart.html" class="split"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        </a>
+      </div>
+
+
+    
+    <div class="page-container">
+        <div class="cart-container">
+            <h1>PAYMENT-SECTION</h1>
+
+            <div id="addr-container">
+            <textarea rows="8" cols="80" placeholder="Address" id="addr" style="border-radius:15px ;"></textarea><br>
+            <button style="width: 100px; height: 50px;">Add Address</button>
+            <a href="cart.html"><button style="width: 100px; height: 50px;">Go to cart</button></a>
+            </div>
+
+            
+        </div>
+
+        <div class="summary-container">
+            <div class="summary">
+                <p class="decor">PAYMENT</p>
+                <hr>
+                <div id="total">Total: <span id="totalAmount">0.00</span></div>
+                <div id="discount">Discount: <span id="discountAmount">0.00</span></div>
+                <div id="deliveryCharges">Delivery Charges: <span id="deliveryChargesAmount">0.00</span></div>
+                <button onclick="checkout()">PAY</button>
+            </div>
+        </div>
+    </div>
+    <p class="description">
+        <img src="delivery-truck.png" alt="Fast Delivery" class="img1">
+        <span ><b>Fast delivery</b></span>
+        <img src="rating.png" alt="Fast Delivery" class="img2">
+        <span ><b>Five star quality</b></span>
+        <img src="security.png" alt="Fast Delivery" class="img3">
+        <span ><b>Highly Secured</b></span>
+    </p>
+
+    <script >
+        function addToCart(productName, price, imageURL) {
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingItemIndex = cartItems.findIndex(item => item.productName === productName);
+
+    if (existingItemIndex !== -1) {
+        cartItems[existingItemIndex].quantity += 1;
+        cartItems[existingItemIndex].price += price;
+    } else {
+        const newItem = { productName, price, quantity: 1, imageURL };
+        cartItems.push(newItem);
+    }
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+
+    // Update the displayed cart
+    displayCart();
+
+    // Update the total amount
+    calculateTotal();
+}
+
+function displayCart() {
+    // Get the cart container element
+    const cartContainer = document.getElementById('cart');
+
+    // Get cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Clear the previous content of the cart container
+    cartContainer.innerHTML = '';
+
+    // Display each item in the cart
+    cartItems.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+
+        // Calculate the price for a single quantity
+        const singleQuantityPrice = item.price / item.quantity;
+
+
+    });
+}
+
+
+function calculateTotal() {
+    
+    // Get cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Calculate the total amount
+    const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
+
+    // Update the displayed total amount
+    document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
+}
+
+function checkout() {
+    // Check if the address textarea is empty
+    const addressTextarea = document.getElementById('addr');
+    const addressValue = addressTextarea.value.trim();
+
+    if (addressValue === '') {
+        // Address is empty, show an alert
+        alert('Please add an address before checking out.');
+        return; // Stop further execution of the checkout process
+    }
+
+    // Clear the cart in localStorage
+    localStorage.removeItem('cart');
+
+    // Update the displayed cart and total amount
+    displayCart();
+    calculateTotal();
+
+    // Inform the user that the checkout is complete
+    alert('Checkout complete! Thank you for your purchase.');
+
+    // Redirect to the payment.html page or do other necessary actions
+    window.location.href = "payment.html";
+}
+
+
+// Call displayCart and calculateTotal on page load to show existing cart items and total amount
+displayCart();
+calculateTotal();
+
+
+function calculateDiscount(price) {
+    // Your discount calculation logic here
+    return price * 0; // Example: 10% discount
+}
+
+function calculateDeliveryCharges() {
+    // Your delivery charges calculation logic here
+    return 5.00; // Example: Fixed delivery charge
+}
+
+
+    </script>
+
+<div class="contact-box">
+    <br>
+    <div class="contact-info">
+        <div>
+            <p><pre><b>Address</b><br><br>
+                 Water Solutions,
+                VJIT, Aziz Nagar, 
+                Hyderabad 500086</pre></p>
+        </div>
+        <div class="social-icons">
+            <p><b>Follow Us</b></p><br><br>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fab fa-instagram" style="color: white;"></i>
+          </a>
+          <a href="https://www.twitter.com/" target="_blank">
+              <i class="fab fa-twitter" style="color: white;"></i>
+          </a>
+          
+        </div>
+        <div>
+            <p><pre><b>Contact</b><br><br>
+                Mobile: +91 81432 58356
+                Contact: aqualink@aq.com</pre></p>
+        </div>
+    </div>
+</div>
+<div class="footer"><br>
+    <pre>&copy;copyright 2023 by Aqualink - Product Of  Water Solutions
+     Privacy Policy | Terms and Conditions
+    Powered By SSRH</pre>
+</div>
+</body>
+</html>

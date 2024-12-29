@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="about.css">
+    <style>
+        body {
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  animation: changeBackground 8s infinite;
+
+}
+
+@keyframes changeBackground {
+  0% {
+    background-image: url('bg1.webp');
+  }
+  33% {
+    background-image: url('bg2.jpg');
+  }
+  66% {
+    background-image: url('bg3.jpg');
+  }
+  100% {
+    background-image: url('bg1.webp');
+  }
+}
+
+/* Optional: Add a white overlay for more contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4); /* Adjust opacity for desired effect */
+  z-index: -1;
+}
+        /* Login Form Container */
+.login-container {
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-field {
+    width: 60%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #1887f2;
+    outline: none;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top: -10px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    width: 30%;
+    padding: 12px;
+    background-color: #1887f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    text-align: center;
+}
+
+.login-btn:hover {
+    background-color: #155c9c;
+}
+
+/* Links */
+.forgot-password,
+.register-link a {
+    color: #1887f2;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Register Link */
+.register-link {
+    font-size: 14px;
+    margin-top: 20px;
+    color:blue;
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 600px) {
+    .login-container {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .login-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+     .login-content {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 3px;
+            
+        }
+        
+        .loginbox {
+            background-color: white;
+            width: 900px;
+            height: 550px;
+            border: 15px;
+            padding: 30px;
+            margin-top: 10px;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        .box{
+            display: flex;
+            gap: 30px;
+            margin-left: 10px;
+        }
+
+        .facebook-box {
+            display: inline-block;
+            padding: 5px 107px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            border: 2px solid bLACK;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            margin-left: 10px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 30px;
+        }
+
+        .google-box {
+            display: inline-block;
+            padding: 5px 100px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            border: 2px solid black;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            margin-left: 10px;
+            margin-top: 30px;
+
+        }
+
+        .checklogin {
+            background-color: white;
+            color: #1887f2;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid black;
+            transition: background-color 0.3s;
+        }
+
+        .google-logo {
+            width: 15px; /* Adjust the size as needed */
+            height: auto;
+            margin-right: 0px;
+            
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: padding 0.3s ease-out;
+            justify-content: space-between;
+            margin-left: 10px;
+        }
+
+        input::placeholder {
+            color: #555;
+            font-style: italic;
+            transition: transform 0.3s ease-out;
+        }
+
+        input:focus::placeholder {
+            transform: translateY(-20px);
+            font-size: 0.8em;
+        }
+
+        input.has-value {
+            padding-top: 20px;
+        }
+
+        .description {
+            display: inline-block;
+            margin-left: 150px;
+        }
+
+        .description img,
+        .description span {
+            vertical-align: middle;
+        }
+
+        .img1 {
+            width: 45px;
+            height: 45px;
+        }
+        .img2 {
+            width: 35px;
+            height: 35px;
+        }
+
+        .img3 {
+            width: 35px;
+            height: 35px;
+        }
+
+        .description span {
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 30px;
+            margin-left: 15px;
+        }
+
+        .button-container {
+            gap: 100px;
+            display: flex;
+            text-align: center;
+            vertical-align: middle;
+            margin-bottom: 10px;
+            padding: 3px;
+            margin-left: 15px;
+            color: white;
+           
+        }
+
+        button {
+            padding: 3px 30px;
+            display: inline-block;
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin-left: 10px;
+        }
+
+        .button-container a {
+            margin-top: 10px;
+            margin-left: 50px;
+        
+        }
+
+        .create {
+            margin-left: 25px;
+        }
+
+        /* Add a media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .loginbox {
+                width: 100%;
+            }
+
+            .box {
+                flex-direction: column;
+            }
+
+            .facebook-box,
+            .google-box {
+                padding: 5px;
+                text-align: center;
+            }
+        }
+        input{
+            width: 200px;
+            padding: 8px;
+            
+        }
+        hr{
+            width: 100%;
+            color: black;
+            height: 2px;
+            background-color: black;
+        }
+        .about {
+            color: black;
+            font-size: large;
+           margin-left: 500px;
+        }
+        .footer {
+            font-size: larger;
+            text-align: center;
+            width: 100%;
+            height: 150px;
+            background-color: #0404aa;
+        }
+        pre{
+          font-size: 18px;
+          font-family:Arialsans-serif ;
+          text-align: center;
+          justify-content: space-around;
+        }
+        .responsive-image img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="shoping.html"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Shop Products</a>
+        <a href="brands.html"><i class="fa fa-tint" aria-hidden="true"></i>
+          Brands</a>
+          <a href="about.html"><i class="fa fa-phone" aria-hidden="true"></i>
+            Contact us</a>
+        <a href="login.html" class="split"><i class="fa fa-fw fa-user"></i> Login</a>
+        <a href="#about" class="split"><i class="fa fa-search" aria-hidden="true"></i>
+        </a>
+        <a href="cart.html" class="split"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        </a>
+    </div>
+    
+    <div class="login-content">
+        <div class="loginbox">
+            <h2>Register</h2>
+            <div class="box">
+                <a href="https://www.facebook.com/" class="facebook-box">
+                    <i class="fab fa-facebook" style="color: #1877F2;"></i>Continue with Facebook
+                </a>
+                <a href="https://www.google.com/" class="google-box">
+                    <img src="googlelogo.png" alt="Google Logo" class="google-logo">
+                    Continue with Google
+                </a>
+            </div>
+            <br>
+            <center><h4>Or</h4></center>
+            <br>
+            <form action="signup.php" method="post" onsubmit="return checkForm()">
+                <div class="form-container">
+                    <div class="input-group">
+                        <input type="tel" id="user-phone" name="phno" class="input-field" placeholder="Mobile" required><br>
+                        <input type="password" id="user-password" name="pswd" class="input-field" placeholder="Password" required><br>
+                        <input type="email" id="email" name="email" class="input-field" placeholder="Email" required><br>
+                        <input type="tel" id="number" name="number" class="input-field" placeholder="Phone number" required><br>
+                       
+                    <div class="action-buttons">
+                        <button type="submit" class="login-btn">Register</button>
+                        
+                    
+                </div>
+                <div class="create">Already have an account?<a href="login.html" class="register-link"> Login Here</a></div>
+                </div>
+            </form>
+            
+            
+            
+        </div>
+    </div>
+</div>
+    <script>
+    function checkForm() {
+            var messageDiv = document.getElementById("message");
+            var fname = document.getElementById("Fname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var number = document.getElementById("number").value;
+
+            localStorage.setItem('loggedInUser', fname);
+
+            // Validate name (not null)
+            if (fname.trim() === "") {
+                messageDiv.innerHTML = "Name cannot be empty";
+                return false;
+            }
+
+            // Validate password (at least one special character and min length 8)
+            var passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                messageDiv.innerHTML = "Password must have at least one special character and be at least 8 characters long";
+                return false;
+            }
+
+            // Validate email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                messageDiv.innerHTML = "Invalid email address";
+                return false;
+            }
+
+            // Validate phone number
+            var numberRegex = /^[6789][0-9]{9}$/;
+            if (!numberRegex.test(number)) {
+                messageDiv.innerHTML = "Invalid phone number";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+<div class="contact-box">
+    <br>
+    <div class="contact-info">
+        <div>
+            <p><pre><b>Address</b><br><br>
+                 Water Solutions,
+                VJIT, Aziz Nagar, 
+                Hyderabad 500086</pre></p>
+        </div>
+        <div class="social-icons">
+            <p><b>Follow Us</b></p><br><br>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fab fa-instagram" style="color: white;"></i>
+          </a>
+          <a href="https://www.twitter.com/" target="_blank">
+              <i class="fab fa-twitter" style="color: white;"></i>
+          </a>
+          
+        </div>
+        <div>
+            <p><pre><b>Contact</b><br><br>
+                Mobile: +91 81432 58356
+                Contact: aqualink@aq.com</pre></p>
+        </div>
+    </div>
+</div>
+<div class="footer"><br>
+    <pre>&copy;copyright 2023 by Aqualink - Product Of  Water Solutions
+     Privacy Policy | Terms and Conditions
+    Powered By SSRH</pre>
+</div>
+</body>
+</html>
